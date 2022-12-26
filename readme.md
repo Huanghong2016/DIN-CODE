@@ -8,7 +8,7 @@
 
 ​		DIN将注意力机制引入模型当中，对用户的历史行为进行注意力分析。虽然如今看对于历史行为的注意力分析方法比较简单，但是也是值得看一下其中逻辑的。
 
-![image-20221226180754320](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20221226180754320.png)
+![image-20221226180754320](D:\github\din--\img\image-20221226180754320.png)
 
 
 
@@ -66,7 +66,7 @@ from sklearn import metrics
 data = pd.read_csv('amazon-books-100k.txt')
 ```
 
-![image-20221226195216964](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20221226195216964.png)
+![image-20221226195216964](D:\github\din--\img\image-20221226195216964.png)
 
 ### 五.数据处理
 
@@ -131,7 +131,7 @@ data = AmazonBookPreprocess(data)
 data
 ```
 
-![image-20221226195514089](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20221226195514089.png)
+![image-20221226195514089](D:\github\din--\img\image-20221226195514089.png)
 
 ```python
 # 查看是否有gpu进行运算，如果没有则使用cpu运算（注：cpu计算很慢很慢，最好开个gpu进行计算）
@@ -418,7 +418,7 @@ epoches = 5
 _ = train(model)
 ```
 
-![image-20221226200413168](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20221226200413168.png)
+![image-20221226200413168](D:\github\din--\img\image-20221226200413168.png)
 
 ### 九.效果展示
 
@@ -429,25 +429,25 @@ _ = train(model)
 dis_test_x.apply(cate_encoder.inverse_transform).reset_index().head(1)
 ```
 
-![image-20221226200531089](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20221226200531089.png)
+![image-20221226200531089](D:\github\din--\img\image-20221226200531089.png)
 
 ```python
 #模型输入的向量
 test_X[0]
 ```
 
-![image-20221226200614763](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20221226200614763.png)
+![image-20221226200614763](D:\github\din--\img\image-20221226200614763.png)
 
 ```python
 #预测购买的概率
 model(torch.unsqueeze(test_X[0],0))
 ```
 
-![image-20221226200824299](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20221226200824299.png)
+![image-20221226200824299](D:\github\din--\img\image-20221226200824299.png)
 
 ```python
 #事实上该用户是否购买
 test_y[0]
 ```
 
-![image-20221226200836658](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20221226200836658.png)
+![image-20221226200836658](D:\github\din--\img\image-20221226200836658.png)
